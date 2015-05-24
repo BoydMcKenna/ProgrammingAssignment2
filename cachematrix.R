@@ -3,7 +3,15 @@
 ## Function to cache the inverse of a matrix to eliminate 
 
 makeCacheMatrix <- function(x = matrix()) {
-
+  inv = NULL
+  set = function(y) {
+    x <<- y
+    inv <<- NULL
+  }
+  get = function() x
+  setinverse = function(inverse) inv <<- inverse 
+  getinverse = function() inv
+  list(setvalue=set, getvalue=get, setinverse=setinv, getinverse=getinv)
 }
 
 ## Creates vector of four values sets the value of vector, get the value of vector, set value of mean and get value of mean
